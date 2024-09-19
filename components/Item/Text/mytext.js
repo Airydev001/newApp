@@ -1,16 +1,26 @@
 import React from 'react';
 
-import {Text} from 'react-native';
+import { SafeAreaView,Text,ScrollView} from 'react-native';
 
 
 const MyText = ()=>{
+
+    let array = Array( 500).fill(0);
     const handleTextClick = ()=>{
         alert('The text has been clicked!');
     };
     return (
+        <SafeAreaView>
+            <ScrollView>
         <Text onPress={()=> handleTextClick()}>
-            Hello, React Native World!
+            {
+                array.map((value, index)=>(
+                    <Text key={index}>Hello Welcome to our world </Text>
+                ))
+            }
         </Text>
+        </ScrollView>
+        </SafeAreaView>
     );
 };
 
